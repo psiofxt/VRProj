@@ -33,19 +33,24 @@ public class ManageTest : MonoBehaviour {
 	}
 
 	public void createRoom(){
-		Instantiate(floor, new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0));
+		Instantiate(floor, new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0)); // floor
+        Instantiate(floor, new Vector3(0, 1, 0), Quaternion.Euler(90, 0, 0));  //ceiling
+        Instantiate(wall, new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0)); //wall 1
+        Instantiate(wall, new Vector3(-5, 0.5f, 0), Quaternion.Euler(90, 0, 0)); // wall 3
+        Instantiate(wall, new Vector3(0, 0.5f, 5), Quaternion.Euler(0, 90, 0)); // wall 2
+        Instantiate(wall, new Vector3(0, 0.5f, -5), Quaternion.Euler(0, 90, 0)); // wall 4
 
 
 
 
-		/*
+        /*
 		for (int z = 0; z < 10; z++){
 			for (int x = 0; x < 10; x++){
 				Instantiate(floor, new Vector3(x, 0, z), Quaternion.Euler(90, 0, 0));
 			}
 		}
 		*/
-	}
+    }
 
 	void destroyAllObjects(){
 		posX = 0;
