@@ -5,6 +5,8 @@ using Valve.VR;
 public class ManageTest : MonoBehaviour {
 	public GameObject floor;
 	public GameObject wall;
+    public GameObject hallway1;
+    public GameObject hallway2;
 	private GameObject theFloor;
 	private GameObject[] destroying;
 	private int posX, posZ = 0;
@@ -34,11 +36,13 @@ public class ManageTest : MonoBehaviour {
 
 	public void createRoom(){
 		Instantiate(floor, new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0)); // floor
-        Instantiate(floor, new Vector3(0, 1, 0), Quaternion.Euler(90, 0, 0));  //ceiling
+        //Instantiate(floor, new Vector3(0, 1, 0), Quaternion.Euler(90, 0, 0));  //ceiling
         Instantiate(wall, new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0)); //wall 1
         Instantiate(wall, new Vector3(-5, 0.5f, 0), Quaternion.Euler(90, 0, 0)); // wall 3
-        Instantiate(wall, new Vector3(0, 0.5f, 5), Quaternion.Euler(0, 90, 0)); // wall 2
-        Instantiate(wall, new Vector3(0, 0.5f, -5), Quaternion.Euler(0, 90, 0)); // wall 4
+        Instantiate(wall, new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0)); // wall 2
+        Instantiate(wall, new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0)); // wall 4
+        Instantiate(hallway1, new Vector3(3, 0.5f, 2), Quaternion.Euler(0, 0, 0)); // big hallway
+        Instantiate(hallway2, new Vector3(3, 0.5f, -4), Quaternion.Euler(0, 0, 0)); // small hallway
 
 
 
