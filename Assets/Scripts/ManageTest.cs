@@ -115,7 +115,7 @@ public class ManageTest : MonoBehaviour {
 		starterRoom.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
 		starterRoom.createHallway(new Vector3(3, 0.5f, 2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway
 		starterRoom.createHallway(new Vector3(3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway
-		starterRoom.createHallway(new Vector3(4, 0.1f, 1), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
+		starterRoom.createHallway(new Vector3(4, 0.1f, -2), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
 		theRooms.Add("1", starterRoom);
 		count++;
 		//Room 1 setup end
@@ -129,7 +129,7 @@ public class ManageTest : MonoBehaviour {
 		room_2.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
 		room_2.createHallway(new Vector3(-3, 0.5f, 2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway
 		room_2.createHallway(new Vector3(-3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway
-		theRooms.Add("2", room_2);
+        theRooms.Add("2", room_2);
 		count++;
     //Room 2 setup end
 
@@ -170,6 +170,7 @@ public class ManageTest : MonoBehaviour {
     room_5.createHallway(new Vector3(-3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway 1
     room_5.createHallway(new Vector3(3, 0.5f, -2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway 2
     room_5.createHallway(new Vector3(3, 0.5f, 4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway 2
+    room_5.createHallway(new Vector3(-4, 0.1f, -2), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
     theRooms.Add("5", room_5);
     count++;
         //Room 5 setup end

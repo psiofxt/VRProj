@@ -18,8 +18,7 @@ public class FloorPlate : MonoBehaviour {
         randomInt = 5;
       }
       else if (lastRoom == 5) {
-            
-                randomInt = Random.Range(6, 9);
+            randomInt = Random.Range(6, 9);
             }
       else
       {
