@@ -6,12 +6,12 @@ public class FloorPlate : MonoBehaviour {
 	private int lastRoom = 1;
     private int transitTotal = 0;
  
-    private static ArrayList room1 =  new ArrayList {5,8,9};
+    private static ArrayList room1 =  new ArrayList {5,9};
     private static ArrayList room2 = new ArrayList { 6, 7, 8, 9 }; //this can be used for 2 and 5
     private static ArrayList room3 = new ArrayList {};
     private static ArrayList room4 = new ArrayList { 6 };
     private static ArrayList room6 = new ArrayList {9, 10};
-    private static ArrayList room8 = new ArrayList {1};
+    private static ArrayList room8 = new ArrayList {1, 5};
     private static ArrayList room9 = new ArrayList {3, 5, 10};
 
     void Start(){
@@ -33,12 +33,12 @@ public class FloorPlate : MonoBehaviour {
                 randomInt = (int)room2[r];
             }
 
-        else if (m_1.lastRoom == 3 || m_1.lastRoom == 7 || m_1.lastRoom == 8)
+        else if (m_1.lastRoom == 3 || m_1.lastRoom == 7)
             {
-                randomInt = 1;
+                randomInt = 11;
             }
 
-        else if (m_1.lastRoom == 4)
+            else if (m_1.lastRoom == 4)
             {
                 r = Random.Range(0, room4.Count);
                 randomInt = (int)room4[r];
@@ -49,7 +49,12 @@ public class FloorPlate : MonoBehaviour {
                 randomInt = (int)room6[r];
             }
 
-       
+        else if (m_1.lastRoom == 8)
+            {
+                r = Random.Range(0, room8.Count);
+                randomInt = (int)room8[r];
+            }
+
         else if(m_1.lastRoom  == 9){
                 r = Random.Range(0, room9.Count);
                 randomInt = (int)room9[r];

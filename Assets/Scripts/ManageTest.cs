@@ -256,12 +256,27 @@ public class ManageTest : MonoBehaviour {
     room_10.createHallway(new Vector3(-2, 0.1f, -4), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
     theRooms.Add("10", room_10);
     count++;
-    //Room 10 setup end
+        //Room 10 setup end
 
+    //Room 10 setup begin
+    Room room_11 = new Room("11");
+    room_11.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
+    room_11.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
+    room_11.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
+    room_11.createWall(new Vector3(-5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 3
+    room_11.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
+    room_11.createHallway(new Vector3(2, 0.5f, 3), Quaternion.Euler(0, 90, 0), hallway1); // big hallway 1
+    room_11.createHallway(new Vector3(-4, 0.5f, 3), Quaternion.Euler(0, 90, 0), hallway2); // small hallway 1
+    room_11.createHallway(new Vector3(2, 0.5f, -3), Quaternion.Euler(0, 90, 0), hallway1); // big hallway 2
+    room_11.createHallway(new Vector3(-4, 0.5f, -3), Quaternion.Euler(0, 90, 0), hallway2); // small hallway 2
+    room_11.createHallway(new Vector3(-2, 0.1f, -4), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
+    theRooms.Add("11", room_11);
+    count++;
+    //Room 11 setup end
 
     }
 
-  public void makeRoom(Room r){
+    public void makeRoom(Room r){
 		foreach (Room.Wall o in r.floor){
 			var temp = Instantiate(o.prefab, o.position, o.rotation) as GameObject;
 			temp.transform.localScale += o.scale;
