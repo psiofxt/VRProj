@@ -20,6 +20,11 @@ public class FloorPlate : MonoBehaviour {
       else if (m_1.lastRoom == 5) {
         randomInt = Random.Range(6, 9);
       }
+
+      else if(m_1.lastRoom > 5)
+            {
+                randomInt = Random.Range(1, 9);
+            }
       else
       {
         randomInt = Random.Range(1, 6);
