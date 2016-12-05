@@ -96,7 +96,7 @@ public class ManageTest : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			restartGame();
-      createRoom("9");
+      createRoom("10");
     }
 	}
 
@@ -241,6 +241,22 @@ public class ManageTest : MonoBehaviour {
 		theRooms.Add("9", room_9);
 		count++;
 		//Room 9 setup end
+
+		//Room 10 setup begin
+    Room room_10 = new Room("10");
+    room_10.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
+    room_10.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
+    room_10.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
+    room_10.createWall(new Vector3(-5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 3
+    room_10.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
+    room_10.createHallway(new Vector3(-2, 0.5f, 3), Quaternion.Euler(0, 90, 0), hallway1); // big hallway 1
+    room_10.createHallway(new Vector3(4, 0.5f, 3), Quaternion.Euler(0, 90, 0), hallway2); // small hallway 1
+    room_10.createHallway(new Vector3(2, 0.5f, -3), Quaternion.Euler(0, 90, 0), hallway1); // big hallway 2
+    room_10.createHallway(new Vector3(-4, 0.5f, -3), Quaternion.Euler(0, 90, 0), hallway2); // small hallway 2
+    room_10.createHallway(new Vector3(-2, 0.1f, -4), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
+    theRooms.Add("10", room_10);
+    count++;
+    //Room 10 setup end
 
 
     }
