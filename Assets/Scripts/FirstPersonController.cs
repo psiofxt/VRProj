@@ -35,8 +35,12 @@ public class FirstPersonController : MonoBehaviour {
 		if (Input.GetButton("Fire3") && cc.isGrounded){
 			forwardSpeed = forwardSpeed * 5;
 		}
-		Vector3 speed = new Vector3(sideSpeed*theSpeed, 0, forwardSpeed*theSpeed);
+		Vector3 speed = new Vector3(sideSpeed*theSpeed, verticalVelocity, forwardSpeed*theSpeed);
 		verticalVelocity += Physics.gravity.y * Time.deltaTime;
+
+		if (cc.isGrounded){
+			verticalVelocity = 0;
+		}
 
 		if (cc.isGrounded && Input.GetButton("Jump")){
 			verticalVelocity = jumpSpeed;

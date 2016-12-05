@@ -13,15 +13,20 @@ public class FloorPlate : MonoBehaviour {
 	void OnTriggerEnter (Collider other){
 	  if (other.tag == "Player"){
       var randomInt = 0;
-      if (m_1.lastRoom == 1)
-      {
+
+      if (m_1.lastRoom == 1){
         randomInt = 5;
       }
+
       else if (m_1.lastRoom == 5) {
-        randomInt = Random.Range(6, 9);
+        randomInt = Random.Range(6, 10);
       }
-      else
-      {
+
+      else if(m_1.lastRoom > 5){
+      	randomInt = Random.Range(1, 10);
+      }
+
+      else{
         randomInt = Random.Range(1, 6);
       }
 
