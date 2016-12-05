@@ -68,11 +68,12 @@ public class ManageTest : MonoBehaviour {
 	public GameObject wall;
   public GameObject hallway1;
   public GameObject hallway2;
-	//private GameObject theFloor;
+	public GameObject floorPlate;
 	private GameObject[] destroying;
 	private int posX, posZ = 0;
 	private int count = 0;
 	public float scaleX, scaleZ;
+  public int lastRoom = 1;
 	public Vector3 corner1, corner2, corner3, corner4;
 	private Hashtable theRooms = new Hashtable();
 
@@ -90,13 +91,6 @@ public class ManageTest : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			restartGame();
-		}
-
-		if (Input.GetMouseButtonDown(0)){
-			var randomInt = Random.Range(1 , 5);
-			Debug.Log(randomInt);
-			destroyAllObjects();
-			createRoom(""+randomInt);
 		}
 	}
 
@@ -121,6 +115,7 @@ public class ManageTest : MonoBehaviour {
 		starterRoom.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
 		starterRoom.createHallway(new Vector3(3, 0.5f, 2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway
 		starterRoom.createHallway(new Vector3(3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway
+		starterRoom.createHallway(new Vector3(4, 0.1f, 1), Quaternion.Euler(0, 0, 0), floorPlate); // small hallway
 		theRooms.Add("1", starterRoom);
 		count++;
 		//Room 1 setup end
@@ -136,10 +131,10 @@ public class ManageTest : MonoBehaviour {
 		room_2.createHallway(new Vector3(-3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway
 		theRooms.Add("2", room_2);
 		count++;
-		//Room 2 setup end
+    //Room 2 setup end
 
-		//Room 3 setup begin
-		Room room_3 = new Room("3");
+    //Room 3 setup begin
+    Room room_3 = new Room("3");
 		room_3.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), floor); // floor
 		room_3.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
 		room_3.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -162,11 +157,26 @@ public class ManageTest : MonoBehaviour {
 		room_4.createHallway(new Vector3(-4, 0.5f, -3), Quaternion.Euler(0, 90, 0), hallway2); // small hallway
 		theRooms.Add("4", room_4);
 		count++;
-		//Room 4 setup end
+    //Room 4 setup end
 
-	}
+    //Room 5  as room2 transit setup begin
+    Room room_5 = new Room("5");
+    room_5.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), floor); // floor
+    room_5.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
+    room_5.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
+    room_5.createWall(new Vector3(-5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 3
+    room_5.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
+    room_5.createHallway(new Vector3(-3, 0.5f, 2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway 1
+    room_5.createHallway(new Vector3(-3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway 1
+    room_5.createHallway(new Vector3(3, 0.5f, -2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway 2
+    room_5.createHallway(new Vector3(3, 0.5f, 4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway 2
+    theRooms.Add("5", room_5);
+    count++;
+    //Room 5 setup end
 
-	public void makeRoom(Room r){
+    }
+
+    public void makeRoom(Room r){
 		foreach (Room.Wall o in r.floor){
 			var temp = Instantiate(o.prefab, o.position, o.rotation) as GameObject;
 			temp.tag = "Room "+r.ID+"";
@@ -192,7 +202,7 @@ public class ManageTest : MonoBehaviour {
 	}
 
 
-	void destroyAllObjects(){
+	public void destroyAllObjects(){
 		for (int n = 1; n <= count; n++){
 			destroying = GameObject.FindGameObjectsWithTag ("Room "+n+"");
 			for(int i = 0; i < destroying.Length; i++){

@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\Scripts\FloorPlate.cs" />
     <Compile Include="Assets\Scripts\FloorScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\IntVector2.cs" />
