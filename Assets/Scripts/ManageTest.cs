@@ -115,7 +115,7 @@ public class ManageTest : MonoBehaviour {
 		starterRoom.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
 		starterRoom.createHallway(new Vector3(3, 0.5f, 2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway
 		starterRoom.createHallway(new Vector3(3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway
-		starterRoom.createHallway(new Vector3(4, 0.1f, 1), Quaternion.Euler(0, 0, 0), floorPlate); // small hallway
+		starterRoom.createHallway(new Vector3(4, 0.1f, 1), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
 		theRooms.Add("1", starterRoom);
 		count++;
 		//Room 1 setup end
@@ -176,7 +176,7 @@ public class ManageTest : MonoBehaviour {
 
     }
 
-    public void makeRoom(Room r){
+  public void makeRoom(Room r){
 		foreach (Room.Wall o in r.floor){
 			var temp = Instantiate(o.prefab, o.position, o.rotation) as GameObject;
 			temp.tag = "Room "+r.ID+"";
