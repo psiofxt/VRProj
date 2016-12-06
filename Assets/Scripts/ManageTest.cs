@@ -115,7 +115,7 @@ public class ManageTest : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			restartGame();
-      createRoom("13");
+      createRoom("14");
     }
 	}
 
@@ -177,7 +177,7 @@ public class ManageTest : MonoBehaviour {
 		//Room 3 setup end
 
 		//Room 4 setup begin
-		Room room_4 = new Room("4", new ArrayList {6});
+		Room room_4 = new Room("4", new ArrayList {13});
 		room_4.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
 		room_4.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
 		room_4.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -207,7 +207,7 @@ public class ManageTest : MonoBehaviour {
     //Room 5 setup end
 
     //Room 6  as room5 transit setup begin
-    Room room_6 = new Room("6", new ArrayList {12});
+    Room room_6 = new Room("6", new ArrayList {1, 12});
     room_6.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
     room_6.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
     room_6.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -237,7 +237,7 @@ public class ManageTest : MonoBehaviour {
     //Room 7 setup end
 
     //Room 8  as room5 transit alt setup begin
-    Room room_8 = new Room("8", new ArrayList {});
+    Room room_8 = new Room("8", new ArrayList {14});
     room_8.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
     room_8.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
     room_8.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -253,7 +253,7 @@ public class ManageTest : MonoBehaviour {
     //Room 8 setup end
 
 		//Room 9 (drop room) setup begin
-		Room room_9 = new Room("9", new ArrayList {3, 5, 10});
+		Room room_9 = new Room("9", new ArrayList {2, 3, 5, 7, 12, 13});
 		room_9.createFloor(new Vector3(0, 0, 1), Quaternion.Euler(90, 0, 0), new Vector3(10, 8, 1), floor); // floor 1
 		room_9.createFloor(new Vector3(-1, 0, -4), Quaternion.Euler(90, 0, 0), new Vector3(8, 2, 1), floor); // floor 2
 		room_9.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
@@ -266,7 +266,7 @@ public class ManageTest : MonoBehaviour {
 		//Room 9 setup end
 
 		//Room 10 setup begin
-    Room room_10 = new Room("10", new ArrayList {});
+    Room room_10 = new Room("10", new ArrayList {13});
     room_10.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
     room_10.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
     room_10.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -282,7 +282,7 @@ public class ManageTest : MonoBehaviour {
     //Room 10 setup end
 
     //Room 11 setup begin
-    Room room_11 = new Room("11", new ArrayList {});
+    Room room_11 = new Room("11", new ArrayList {13});
     room_11.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
     room_11.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
     room_11.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -298,7 +298,7 @@ public class ManageTest : MonoBehaviour {
     //Room 11 setup end
 
 		//Room 12 setup begin
-    Room room_12 = new Room("12", new ArrayList {});
+    Room room_12 = new Room("12", new ArrayList {11});
     room_12.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
     room_12.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
     room_12.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -314,7 +314,7 @@ public class ManageTest : MonoBehaviour {
     //Room 12 setup end
 
 		//Room 13 setup begin
-    Room room_13 = new Room("13", new ArrayList {});
+    Room room_13 = new Room("13", new ArrayList {9});
     room_13.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
     room_13.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
     room_13.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
@@ -328,6 +328,22 @@ public class ManageTest : MonoBehaviour {
     theRooms.Add("13", room_13);
     count++;
     //Room 13 setup end
+
+		//Room 14 setup begin
+    Room room_14 = new Room("14", new ArrayList {6, 7, 8, 9});
+    room_14.createFloor(new Vector3(0, 0, 0), Quaternion.Euler(90, 0, 0), new Vector3(10, 10, 1), floor); // floor
+    room_14.createWall(new Vector3(5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 1
+    room_14.createWall(new Vector3(0, 0.5f, 5), Quaternion.Euler(90, 90, 0), wall); // wall 2
+    room_14.createWall(new Vector3(-5, 0.5f, 0), Quaternion.Euler(90, 0, 0), wall); // wall 3
+    room_14.createWall(new Vector3(0, 0.5f, -5), Quaternion.Euler(90, 90, 0), wall); // wall 4
+    room_14.createHallway(new Vector3(3, 0.5f, 2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway 1
+    room_14.createHallway(new Vector3(3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway 1
+    room_14.createHallway(new Vector3(-3, 0.5f, 2), Quaternion.Euler(0, 0, 0), hallway1); // big hallway 2
+    room_14.createHallway(new Vector3(-3, 0.5f, -4), Quaternion.Euler(0, 0, 0), hallway2); // small hallway 2
+    room_14.createHallway(new Vector3(-4, 0.1f, -2), Quaternion.Euler(0, 0, 0), floorPlate); // floor plate
+    theRooms.Add("14", room_14);
+    count++;
+    //Room 14 setup end
 
     }
 
